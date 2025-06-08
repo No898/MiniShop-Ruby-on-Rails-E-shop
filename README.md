@@ -13,9 +13,13 @@ It covers the complete flow from public storefront and user accounts to admin ma
 * Add products to a session-based cart
 * Place orders with address and confirmation flow
 * **Admin dashboard (mini CMS)** for managing products, categories, and orders
+  * **Bonus:** Dashboard with stats/charts, bulk actions for management.
 * User profile with order history
 * API endpoints for products and orders (JSON)
-* Responsive modern UI (TailwindCSS)
+* **Modern & Dynamic UI (TailwindCSS & Hotwire)**
+  * Real-time updates for cart and product filters.
+  * Enhanced UX with toast notifications and loading states.
+  * Polished "empty-state" pages (e.g., for an empty cart).
 * Basic tests (Minitest or RSpec)
 * **SEO best practices:** meta tags, friendly URLs, sitemap, Open Graph
 * **Accessibility:** semantic HTML, alt text, keyboard navigation
@@ -28,6 +32,7 @@ It covers the complete flow from public storefront and user accounts to admin ma
 ## Technologies
 
 * Ruby on Rails 8+
+* Hotwire (Turbo & Stimulus) for a modern, fast UI
 * TailwindCSS
 * Devise (authentication)
 * ActiveStorage (image uploads)

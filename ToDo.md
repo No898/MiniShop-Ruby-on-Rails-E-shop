@@ -44,7 +44,9 @@
     - Categories (admin only)
     - Products (admin only, with image upload)
 - [ ] Admin dashboard home with quick stats/links
+   - [ ] **Bonus:** Add charts for orders/revenue (e.g., with Chart.js)
 - [ ] Orders overview (admin can see all, change status)
+   - [ ] **Bonus:** Implement bulk actions for changing order statuses
 - [ ] Admin-only navigation and layout (clear separation)
 
 ---
@@ -111,6 +113,13 @@
 - [ ] Show helpful flash messages for all actions
 - [ ] Consistent navigation and layout
 - [ ] Admin area visually separated from public
+- [ ] **Advanced UX with Hotwire:**
+  - [ ] Implement dynamic "Add to cart" button without page reload (Turbo Streams)
+  - [ ] Implement real-time product filtering on category pages (Turbo Frames)
+- [ ] **Visual Feedback & Polish:**
+  - [ ] Use modern "toast" notifications instead of classic flash messages
+  - [ ] Add loading state indicators to key buttons (checkout, forms)
+  - [ ] Design "empty state" pages (for empty cart, no orders, etc.)
 
 ---
 
