@@ -1,0 +1,1 @@
+# MiniShop-Ruby-on-Rails-E-shop
