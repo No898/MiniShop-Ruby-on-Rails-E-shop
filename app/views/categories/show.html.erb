@@ -1,0 +1,19 @@
+<div class="w-full">
+  <h1 class="text-3xl font-bold mb-2"><%= @category.name %></h1>
+  <p class="text-gray-600 mb-8"><%= @category.description %></p>
+
+  <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+    <% if @products.any? %>
+      <div class="mt-6 grid grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-2 lg:grid-cols-4 xl:gap-x-8">
+        <% @products.each do |product| %>
+          <%= render "products/product_card", product: product %>
+        <% end %>
+      </div>
+      <div class="mt-8 flex justify-center">
+        <%== pagy_nav(@pagy) if @pagy.pages > 1 %>
+      </div>
+    <% else %>
+      <p class="text-gray-500 col-span-full">V této kategorii zatím nejsou žádné produkty.</p>
+    <% end %>
+  </div>
+</div> 

@@ -1,0 +1,9 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: "Elektronika"
+  description: "Testovací kategorie"
+
+two:
+  name: "Knihy"
+  description: "Další testovací kategorie"

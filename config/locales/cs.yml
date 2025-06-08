@@ -1,0 +1,159 @@
+cs:
+  date:
+    formats:
+      default: "%d.%m.%Y"
+      short: "%d. %m."
+      long: "%d. %B %Y"
+    day_names: [neděle, pondělí, úterý, středa, čtvrtek, pátek, sobota]
+    abbr_day_names: [ne, po, út, st, čt, pá, so]
+    month_names: [~, leden, únor, březen, duben, květen, červen, červenec, srpen, září, říjen, listopad, prosinec]
+    abbr_month_names: [~, led, úno, bře, dub, kvě, čvn, čvc, srp, zář, říj, lis, pro]
+    order: [:day, :month, :year]
+  time:
+    formats:
+      default: "%a, %d. %b. %Y %H:%M:%S %z"
+      short: "%d. %m. %H:%M"
+      long: "%d. %B %Y %H:%M"
+    am: "dopoledne"
+    pm: "odpoledne"
+  support:
+    array:
+      words_connector: ", "
+      two_words_connector: " a "
+      last_word_connector: " a "
+  number:
+    format:
+      separator: ","
+      delimiter: " "
+      precision: 2
+      significant: false
+      strip_insignificant_zeros: false
+    currency:
+      format:
+        format: "%n %u"
+        unit: "Kč"
+        separator: ","
+        delimiter: " "
+        precision: 2
+        significant: false
+        strip_insignificant_zeros: false
+    percentage:
+      format:
+        delimiter: ""
+    precision:
+      format:
+        delimiter: ""
+    human:
+      format:
+        delimiter: ""
+        precision: 1
+        significant: true
+        strip_insignificant_zeros: true
+      storage_units:
+        format: "%n %u"
+        units:
+          byte:
+            one:   "B"
+            other: "B"
+          kb: "KB"
+          mb: "MB"
+          gb: "GB"
+          tb: "TB"
+      decimal_units:
+        format: "%n %u"
+        units:
+          unit: ""
+          thousand: "tisíc"
+          million: "milion"
+          billion: "miliarda"
+          trillion: "bilion"
+          quadrillion: "kvadrilion"
+
+  datetime:
+    distance_in_words:
+      half_a_minute: "půl minutou"
+      less_than_x_seconds:
+        one:   "asi sekundou"
+        other: "asi %{count} sekundami"
+      x_seconds:
+        one:   "sekundou"
+        other: "%{count} sekundami"
+      less_than_x_minutes:
+        one:   "necelou minutou"
+        other: "necelými %{count} minutami"
+      x_minutes:
+        one:   "minutou"
+        other: "%{count} minutami"
+      about_x_hours:
+        one:   "asi hodinou"
+        other: "asi %{count} hodinami"
+      x_days:
+        one:   "24 hodinami"
+        other: "%{count} dny"
+      about_x_months:
+        one:   "asi měsícem"
+        other: "asi %{count} měsíci"
+      x_months:
+        one:   "měsícem"
+        other: "%{count} měsíci"
+      about_x_years:
+        one:   "asi rokem"
+        other: "asi %{count} lety"
+      over_x_years:
+        one:   "více než rokem"
+        other: "více než %{count} lety"
+      almost_x_years:
+        one:   "téměř rokem"
+        other: "téměř %{count} lety"
+    prompts:
+      year:   "Rok"
+      month:  "Měsíc"
+      day:    "Den"
+      hour:   "Hodina"
+      minute: "Minuta"
+      second: "Sekunda"
+
+  helpers:
+    select:
+      prompt: "Prosím vyberte"
+    submit:
+      create: "Vytvořit %{model}"
+      update: "Uložit %{model}"
+      submit: "Uložit %{model}"
+
+  errors:
+    format: "%{attribute} %{message}"
+    messages:
+      inclusion: "není v seznamu povolených hodnot"
+      exclusion: "je vyhrazeno pro jiné použití"
+      invalid: "je neplatné"
+      confirmation: "nebylo potvrzeno"
+      accepted: "musí být potvrzeno"
+      empty: "nesmí být prázdné"
+      blank: "nesmí být prázdný"
+      too_long: "je příliš dlouhé (max. %{count} znaků)"
+      too_short: "je příliš krátké (min. %{count} znaků)"
+      wrong_length: "nemá správnou délku (očekáváno %{count} znaků)"
+      not_a_number: "není číslo"
+      not_an_integer: "musí být celé číslo"
+      greater_than: "musí být větší než %{count}"
+      greater_than_or_equal_to: "musí být větší nebo rovno %{count}"
+      equal_to: "musí být rovno %{count}"
+      less_than: "musí být menší než %{count}"
+      less_than_or_equal_to: "musí být menší nebo rovno %{count}"
+      other_than: "musí být jiné než %{count}"
+      odd: "musí být liché"
+      even: "musí být sudé"
+      taken: "již existuje"
+      record_invalid: "Validace selhala: %{errors}"
+      required: "musí existovat"
+
+  activerecord:
+    errors:
+      template:
+        header:
+          one: "Při ukládání objektu %{model} došlo k chybě"
+          other: "Při ukládání objektu %{model} došlo k %{count} chybám"
+        body: "Následující pole obsahují chyby:"
+      full_messages:
+        format: "%{attribute} %{message}" 

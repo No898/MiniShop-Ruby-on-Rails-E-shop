@@ -1,0 +1,36 @@
+<div class="container mx-auto px-4 py-8">
+  <div class="bg-green-100 border-l-4 border-green-500 text-green-700 p-4 mb-6" role="alert">
+    <p class="font-bold">Děkujeme za vaši objednávku!</p>
+    <p>Vaše objednávka byla úspěšně přijata a brzy ji začneme zpracovávat.</p>
+  </div>
+
+  <div class="bg-white shadow-md rounded-lg p-6">
+    <h1 class="text-2xl font-semibold mb-4">Souhrn objednávky č. <%= @order.id %></h1>
+    
+    <div class="mb-4">
+      <h2 class="text-lg font-semibold">Doručovací adresa:</h2>
+      <p class="text-gray-700"><%= simple_format(@order.address) %></p>
+    </div>
+    
+    <div class="mb-4">
+      <h2 class="text-lg font-semibold">Stav objednávky:</h2>
+      <p class="text-gray-700 font-medium"><%= @order.status %></p>
+    </div>
+
+    <h2 class="text-lg font-semibold mt-6">Objednané položky:</h2>
+    <ul>
+      <% @order.order_items.each do |item| %>
+        <li class="flex justify-between py-2 border-b">
+          <span><%= item.product.name %> (x<%= item.quantity %>)</span>
+          <span class="font-semibold"><%= number_to_currency(item.subtotal, unit: "Kč") %></span>
+        </li>
+      <% end %>
+    </ul>
+    <div class="flex justify-between font-bold text-xl mt-4 pt-4 border-t">
+      <span>Celkem</span>
+      <span><%= number_to_currency(@order.total_price, unit: "Kč") %></span>
+    </div>
+
+    <%= link_to "Zpět na hlavní stránku", root_path, class: "text-blue-500 hover:text-blue-700 mt-6 inline-block" %>
+  </div>
+</div> 

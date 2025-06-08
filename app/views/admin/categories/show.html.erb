@@ -1,0 +1,20 @@
+<div class="mb-4">
+  <h1 class="text-2xl font-bold">Detail kategorie</h1>
+</div>
+
+<div class="bg-white p-4 rounded shadow">
+  <p class="mb-2">
+    <strong class="font-semibold">Název:</strong>
+    <%= @category.name %>
+  </p>
+
+  <p>
+    <strong class="font-semibold">Popis:</strong>
+    <%= @category.description %>
+  </p>
+</div>
+
+<div class="mt-4">
+  <%= link_to 'Upravit', edit_admin_category_path(@category), class: "bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded" %>
+  <%= link_to 'Zpět na seznam', admin_categories_path, class: "ml-4 text-gray-600" %>
+</div> 

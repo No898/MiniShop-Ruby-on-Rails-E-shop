@@ -1,0 +1,18 @@
+<div class="w-full">
+  <h1 class="text-3xl font-bold text-center mb-8">Vítejte v našem MiniShopu!</h1>
+  <h2 class="text-2xl font-semibold mb-6">Nejnovější produkty</h2>
+
+  <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+    <% @latest_products.each do |product| %>
+      <div class="border rounded-lg p-4 shadow-lg hover:shadow-xl transition-shadow duration-300">
+        <%# Zde bude obrázek produktu %>
+        <div class="bg-gray-200 h-48 w-full rounded-md mb-4 flex items-center justify-center">
+          <span class="text-gray-500">Obrázek</span>
+        </div>
+        <h3 class="text-lg font-bold"><%= product.name %></h3>
+        <p class="text-gray-900 font-semibold my-2"><%= number_to_currency(product.price, unit: "Kč", separator: ",", delimiter: " ", format: "%n %u") %></p>
+        <%= link_to 'Zobrazit detail', product, class: "text-blue-600 hover:underline" %>
+      </div>
+    <% end %>
+  </div>
+</div>

@@ -1,0 +1,22 @@
+<h1 class="text-3xl font-bold mb-6">Admin Dashboard</h1>
+
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+  <!-- Stat Card: Products -->
+  <div class="bg-white p-6 rounded-lg shadow-md">
+    <h2 class="text-xl font-semibold text-gray-700">Celkem produktů</h2>
+    <p class="text-4xl font-bold text-gray-900 mt-2"><%= @product_count %></p>
+    <%= link_to "Spravovat produkty", admin_products_path, class: "text-blue-600 hover:underline mt-4 inline-block" %>
+  </div>
+
+  <!-- Stat Card: Categories -->
+  <div class="bg-white p-6 rounded-lg shadow-md">
+    <h2 class="text-xl font-semibold text-gray-700">Celkem kategorií</h2>
+    <p class="text-4xl font-bold text-gray-900 mt-2"><%= @category_count %></p>
+    <%= link_to "Spravovat kategorie", admin_categories_path, class: "text-blue-600 hover:underline mt-4 inline-block" %>
+  </div>
+
+  <!-- Placeholder Card -->
+  <div class="bg-white p-6 rounded-lg shadow-md flex items-center justify-center">
+    <p class="text-gray-500">Další statistiky již brzy...</p>
+  </div>
+</div>

@@ -1,0 +1,37 @@
+<% content_for :title, "Products" %>
+
+<div class="w-full">
+  <% if notice.present? %>
+    <p class="py-2 px-3 bg-green-50 mb-5 text-green-500 font-medium rounded-md inline-block" id="notice"><%= notice %></p>
+  <% end %>
+
+  <div class="flex justify-between items-center mb-4">
+    <h1 class="text-2xl font-bold">Správa produktů</h1>
+    <%= link_to 'Nový produkt', new_admin_product_path, class: "bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded" %>
+  </div>
+
+  <table class="min-w-full bg-white">
+    <thead class="bg-gray-100">
+      <tr>
+        <th class="py-2 px-4 border-b text-left">Název</th>
+        <th class="py-2 px-4 border-b text-left">Kategorie</th>
+        <th class="py-2 px-4 border-b text-left">Cena</th>
+        <th class="py-2 px-4 border-b text-right">Akce</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @products.each do |product| %>
+        <tr class="hover:bg-gray-50">
+          <td class="py-2 px-4 border-b"><%= product.name %></td>
+          <td class="py-2 px-4 border-b"><%= product.category.name %></td>
+          <td class="py-2 px-4 border-b"><%= number_to_currency(product.price, unit: "Kč", separator: ",", delimiter: " ", format: "%n %u") %></td>
+          <td class="py-2 px-4 border-b text-right">
+            <%= link_to 'Zobrazit', admin_product_path(product), class: "text-blue-600 hover:underline" %>
+            <%= link_to 'Upravit', edit_admin_product_path(product), class: "text-blue-600 hover:underline ml-2" %>
+            <%= link_to 'Smazat', admin_product_path(product), data: { "turbo-method": :delete, "turbo-confirm": "Opravdu smazat?" }, class: "text-red-600 hover:underline ml-2" %>
+          </td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>

@@ -1,0 +1,45 @@
+<h1>Děkujeme za vaši objednávku!</h1>
+
+<p>
+  Dobrý den, <%= @order.user.email %>,
+</p>
+
+<p>
+  tímto potvrzujeme přijetí vaší objednávky č. <strong><%= @order.id %></strong>.
+</p>
+
+<h3>Souhrn objednávky</h3>
+<table border="1" cellpadding="5" cellspacing="0" style="width: 100%; border-collapse: collapse;">
+  <thead>
+    <tr style="background-color: #f0f0f0;">
+      <th>Produkt</th>
+      <th>Množství</th>
+      <th>Cena</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @order.order_items.each do |item| %>
+      <tr>
+        <td><%= item.product.name %></td>
+        <td><%= item.quantity %></td>
+        <td><%= number_to_currency(item.subtotal, unit: "Kč") %></td>
+      </tr>
+    <% end %>
+  </tbody>
+  <tfoot>
+    <tr>
+      <th colspan="2" style="text-align: right;">Celkem:</th>
+      <th><%= number_to_currency(@order.total_price, unit: "Kč") %></th>
+    </tr>
+  </tfoot>
+</table>
+
+<h4>Doručovací adresa</h4>
+<p>
+  <%= simple_format(@order.address) %>
+</p>
+
+<p>
+  S pozdravem,<br>
+  Tým MiniShop
+</p>

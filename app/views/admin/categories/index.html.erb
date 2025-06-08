@@ -1,0 +1,27 @@
+<div class="flex justify-between items-center mb-4">
+  <h1 class="text-2xl font-bold">Správa kategorií</h1>
+  <%= link_to 'Nová kategorie', new_admin_category_path, class: "bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded" %>
+</div>
+
+<table class="min-w-full bg-white">
+  <thead class="bg-gray-100">
+    <tr>
+      <th class="py-2 px-4 border-b text-left">Název</th>
+      <th class="py-2 px-4 border-b text-left">Popis</th>
+      <th class="py-2 px-4 border-b text-right">Akce</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @categories.each do |category| %>
+      <tr class="hover:bg-gray-50">
+        <td class="py-2 px-4 border-b"><%= category.name %></td>
+        <td class="py-2 px-4 border-b"><%= category.description %></td>
+        <td class="py-2 px-4 border-b text-right">
+          <%= link_to 'Zobrazit', admin_category_path(category), class: "text-blue-600 hover:underline" %>
+          <%= link_to 'Upravit', edit_admin_category_path(category), class: "text-blue-600 hover:underline ml-2" %>
+          <%= link_to 'Smazat', admin_category_path(category), data: { "turbo-method": :delete, "turbo-confirm": "Opravdu smazat?" }, class: "text-red-600 hover:underline ml-2" %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table> 

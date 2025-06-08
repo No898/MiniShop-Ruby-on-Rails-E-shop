@@ -1,0 +1,27 @@
+<div class="container mx-auto px-4">
+  <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+    
+    <div>
+      <%# Zde bude obrázek produktu %>
+      <div class="bg-gray-200 h-96 w-full rounded-lg flex items-center justify-center">
+        <span class="text-gray-500">Obrázek</span>
+      </div>
+    </div>
+
+    <div>
+      <h1 class="text-4xl font-bold mb-2"><%= @product.name %></h1>
+      <p class="text-gray-500 mb-4">
+        v kategorii <%= link_to @product.category.name, category_path(@product.category), class: "text-blue-600 hover:underline" %>
+      </p>
+      
+      <p class="text-3xl font-bold text-gray-900 mb-6"><%= number_to_currency(@product.price, unit: "Kč", separator: ",", delimiter: " ", format: "%n %u") %></p>
+
+      <%= button_to "Přidat do košíku", order_items_path(product_id: @product.id), class: "bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded" %>
+
+      <div class="prose max-w-none mb-6">
+        <%= simple_format(@product.description) %>
+      </div>
+    </div>
+
+  </div>
+</div>

@@ -2,48 +2,48 @@
 
 ## 1. Project Initialization
 
-- [ ] Create new Rails project with Tailwind and SQLite  
+- [x] Create new Rails project with Tailwind and SQLite  
       `rails new mini_shop --css=tailwind --database=sqlite3`
-- [ ] Initialize git repository & add `.gitignore`
-- [ ] Create README and this TODO checklist
+- [x] Initialize git repository & add `.gitignore`
+- [x] Create README and this TODO checklist
 
 ---
 
 ## 2. Authentication & Users
 
-- [ ] Add Devise gem to Gemfile, run `bundle install`
-- [ ] Run `rails generate devise:install`
-- [ ] Generate User model via Devise: `rails generate devise User`
-- [ ] Add admin boolean to users:  
+- [x] Add Devise gem to Gemfile, run `bundle install`
+- [x] Run `rails generate devise:install`
+- [x] Generate User model via Devise: `rails generate devise User`
+- [x] Add admin boolean to users:  
       `rails generate migration AddAdminToUsers admin:boolean`
-- [ ] Run migrations
-- [ ] Add default user/admin seed in `db/seeds.rb`
+- [x] Run migrations
+- [x] Add default user/admin seed in `db/seeds.rb`
 - [ ] Add logic to restrict admin features to admin users
-- [ ] Implement user sign up, sign in, and sign out UI
+- [x] Implement user sign up, sign in, and sign out UI
 - [ ] Add "Make admin" script or console command for user promotion
 
 ---
 
 ## 3. Database Models & Relations
 
-- [ ] Design DB schema (draw or note models and relationships)
-- [ ] Generate models:
-    - [ ] Category (`name`, `description`)
-    - [ ] Product (`name`, `description`, `price`, `category_id`, `image`)
-    - [ ] Order (`user_id`, `address`, `status`, `total_price`)
-    - [ ] OrderItem (`order_id`, `product_id`, `quantity`, `unit_price`)
-- [ ] Add model relationships and validations
-- [ ] Add sample seed data for products and categories
+- [x] Design DB schema (draw or note models and relationships)
+- [x] Generate models:
+    - [x] Category (`name`, `description`)
+    - [x] Product (`name`, `description`, `price`, `category_id`, `image`)
+    - [x] Order (`user_id`, `address`, `status`, `total_price`)
+    - [x] OrderItem (`order_id`, `product_id`, `quantity`, `unit_price`)
+- [x] Add model relationships and validations
+- [x] Add sample seed data for products and categories
 
 ---
 
 ## 4. Admin Dashboard (CMS)
 
-- [ ] Create admin namespace/routes (`namespace :admin`)
+- [x] Create admin namespace/routes (`namespace :admin`)
 - [ ] CRUD controllers/views for:
-    - Categories (admin only)
-    - Products (admin only, with image upload)
-- [ ] Admin dashboard home with quick stats/links
+    - [x] Categories (admin only)
+    - [x] Products (admin only, with image upload)
+- [x] Admin dashboard home with quick stats/links
    - [ ] **Bonus:** Add charts for orders/revenue (e.g., with Chart.js)
 - [ ] Orders overview (admin can see all, change status)
    - [ ] **Bonus:** Implement bulk actions for changing order statuses
@@ -53,41 +53,45 @@
 
 ## 5. Public Storefront
 
-- [ ] Home page: list featured or new products
-- [ ] Category list page, with product count
-- [ ] Product listing by category (filtering)
-- [ ] Product detail page
-- [ ] Add-to-cart button on product pages
+- [x] Home page: list featured or new products
+- [x] Category list page, with product count
+- [x] Product listing by category (filtering)
+- [x] Product detail page
+- [x] Add-to-cart button on product pages
 
 ---
 
 ## 6. Cart Logic
+**Status:** 🟠 Funkčnost implementována, ale integrační testy selhávají. Je potřeba se k nim vrátit.
 
-- [ ] Implement session-based cart structure
-- [ ] Add "Add to cart" button (products)
-- [ ] Cart page: list items, quantities, total price
-- [ ] Ability to remove/update quantity in cart
-- [ ] Cart persists until checkout or clear
+- [x] Implement session-based cart structure
+- [x] Add "Add to cart" button (products)
+- [x] Cart page: list items, quantities, total price
+- [x] Ability to remove/update quantity in cart
+- [x] Cart persists until checkout or clear
 
 ---
 
 ## 7. Checkout & Orders
+**Status:** 🟠 Funkčnost implementována, ale pokus o napsání integračních testů selhal. Je potřeba se k nim vrátit společně s testy pro košík.
 
-- [ ] Checkout form: collect shipping address
-- [ ] Review order before confirmation
-- [ ] Save order and order items to DB
-- [ ] Empty cart after order
-- [ ] Confirmation page with order summary
-- [ ] Send confirmation email (optional, bonus)
+- [x] Checkout form: collect shipping address
+- [x] Review order before confirmation
+- [x] Save order and order items to DB
+- [x] Empty cart after order
+- [x] Confirmation page with order summary
+- [x] Send confirmation email (optional, bonus)
 
----
+## 7. Mailer
 
-## 8. User Profile
+- [x] Lokální mailer pro development (letter_opener)
+- [x] Vytvoření maileru pro potvrzení objednávky
+- [x] Test pro OrderMailer
 
-- [ ] User profile page (orders history, details)
-- [ ] Order detail page with items and status
+## 8. Uživatelský profil
 
----
+- [x] Vytvoření stránky pro zobrazení historie objednávek přihlášeného uživatele
+- [ ] ~~Napsat testy pro profil uživatele (Integration test)~~ - *Odloženo kvůli problémům s testy session*
 
 ## 9. Product Images
 
@@ -191,6 +195,17 @@
 - [ ] Set up ENV variables in `.env` or Rails secrets
 - [ ] Add instructions for running seeds and image uploads
 - [ ] Update README with final stack, setup, and screenshots
+
+---
+
+## Poznámky a budoucí vylepšení
+
+- **Vrátit se k testům!** Napsat integrační testy pro košík a proces objednávky, které aktuálně selhávají.
+- Zvážit přidání PWA (Progressive Web App) funkcí pro lepší mobilní zážitek.
+- Rozšířit možnosti filtrování a řazení produktů.
+- Implementovat fulltextové vyhledávání.
+- Přidat stránkování (pagination) pro seznamy produktů a kategorií.
+- Design a UI/UX vylepšení (ikony, animace, lepší responsivita).
 
 ---
 

@@ -1,0 +1,13 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: "Chytrý telefon"
+  description: "Nejlepší telefon."
+  price: 15000
+  category: one # Odkazuje na fixturu 'one' z categories.yml
+
+two:
+  name: "Detektivka"
+  description: "Napínavá kniha."
+  price: 299
+  category: two # Odkazuje na fixturu 'two' z categories.yml

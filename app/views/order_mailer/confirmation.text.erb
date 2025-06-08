@@ -1,0 +1,23 @@
+Děkujeme za vaši objednávku!
+
+Dobrý den, <%= @order.user.email %>,
+
+tímto potvrzujeme přijetí vaší objednávky č. <%= @order.id %>.
+
+SOUHRN OBJEDNÁVKY
+---------------------------------
+<% @order.order_items.each do |item| %>
+* <%= item.product.name %> (x<%= item.quantity %>) - <%= number_to_currency(item.subtotal, unit: "Kč") %>
+<% end %>
+---------------------------------
+CELKEM: <%= number_to_currency(@order.total_price, unit: "Kč") %>
+
+DORUČOVACÍ ADRESA
+---------------------------------
+<%= @order.address %>
+
+
+S pozdravem,
+Tým MiniShop
+
+<%= @greeting %>, find me in app/views/order_mailer/confirmation.text.erb

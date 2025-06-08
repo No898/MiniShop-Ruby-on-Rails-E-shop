@@ -1,0 +1,38 @@
+<%= form_with(model: [:admin, @product], class: "space-y-4") do |form| %>
+  <% if @product.errors.any? %>
+    <div style="color: red; margin-bottom: 1rem;">
+      <h2 class="font-bold text-lg"><%= pluralize(@product.errors.count, "chyba", "chyby", "chyb") %> zabránilo uložení tohoto produktu:</h2>
+      <ul class="list-disc list-inside">
+        <% @product.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div>
+    <%= form.label :name, 'Název', class: "block text-sm font-medium text-gray-700" %>
+    <%= form.text_field :name, class: "mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm" %>
+  </div>
+
+  <div>
+    <%= form.label :category_id, 'Kategorie', class: "block text-sm font-medium text-gray-700" %>
+    <%= form.collection_select :category_id, @categories, :id, :name, { prompt: 'Vyberte kategorii' }, { class: "mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm" } %>
+  </div>
+
+  <div>
+    <%= form.label :description, 'Popis', class: "block text-sm font-medium text-gray-700" %>
+    <%= form.text_area :description, rows: 4, class: "mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm" %>
+  </div>
+
+  <div>
+    <%= form.label :price, 'Cena', class: "block text-sm font-medium text-gray-700" %>
+    <%= form.number_field :price, step: 'any', class: "mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm" %>
+  </div>
+
+
+  <div>
+    <%= form.submit 'Uložit produkt', class: "bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded cursor-pointer" %>
+    <%= link_to 'Zpět na seznam', admin_products_path, class: "ml-4 text-gray-600" %>
+  </div>
+<% end %>
