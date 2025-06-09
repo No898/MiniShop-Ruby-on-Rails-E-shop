@@ -53,3 +53,5 @@
 /vendor/ruby/2.7.0/cache/bundler/git/https-github.com-no898-mcp-mcp.git/refs/.keep
 /vendor/ruby/2.7.0/cache/bundler/git/https-github.com-no898-mcp-mcp.git/refs/heads/.keep
 /vendor/ruby/2.7.0/cache/bundler/git/https-github.com-no898-mcp-mcp.git/refs/heads/main/.keep
+
+Gemfile.lock
